@@ -80,7 +80,18 @@ function handleLocalMediaStreamError(error) {
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
     peer = new Peer(null, {
-        debug: 2
+        host: 'localhost',
+        port: 9000,
+        path: '/myapp',
+        debug: 3,
+        config: { 'iceServers': [
+            {"urls": "stun:stun.l.google.com:19302"},
+		    {"urls": "stun:stun1.l.google.com:19302"},
+		    {"urls": "stun:stun2.l.google.com:19302"},
+		    {"urls": "stun:stun3.l.google.com:19302"},
+		    {"urls": "stun:stun4.l.google.com:19302"}
+        ]
+    }
     });
 
     peer.on('open', function (id) {
