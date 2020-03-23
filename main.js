@@ -28,7 +28,7 @@ function onCallListener() {
                 localVideo.srcObject = mediaStream;
 
                 call.on('stream', function(remoteStream) {
-                    console.log('on stream remote');;
+                    console.log('on stream remote info:' + remoteStream);
                     remoteVideo.srcObject = remoteStream;
                 });
 
