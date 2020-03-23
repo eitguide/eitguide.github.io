@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        video {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebRTC Peer</h1>
+    <p>ID generate by peerjs</p>
+    <input id="idUser" type="text" placeholder="ID user"/>
+    <br />
+    <br/>
+    <video id="localVideo" controls autoplay ></video>
+    <video id="remoteVideo" controls autoplay></video>
+
+    <br/>
+    <button id="startCallButton">Connect</button>
+    <p>with Id:</p>
+    <input id="idConnectWith" type="text" placeholder="connect with id">
+    <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
