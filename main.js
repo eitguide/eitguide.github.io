@@ -122,7 +122,6 @@ function initialize() {
     });
     peer.on('error', function (err) {
         console.log(err);
-        alert('' + err);
     });
 };
 
