@@ -80,7 +80,7 @@ function handleLocalMediaStreamError(error) {
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
     peer = new Peer(null, {
-        host: "http://24hschool.com/",
+        host: "http://24hschool.com",
         port: 9000,
         path: "/myapp",
         debug: 3,
