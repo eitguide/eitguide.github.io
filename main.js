@@ -80,6 +80,9 @@ function handleLocalMediaStreamError(error) {
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
     peer = new Peer(null, {
+        host: "http://24hschool.com",
+        port: 9000,
+        path: "/myapp",
         debug: 3,
         config: { 'iceServers': [
             {"urls": "stun:stun.l.google.com:19302"},
@@ -92,7 +95,6 @@ function initialize() {
     });
 
     peer.on('open', function (id) {
-        // Workaround for peer.reconnect deleting previous id
         if (peer.id === null) {
             console.log('Received null id from peer open');
             peer.id = lastPeerId;
