@@ -77,17 +77,22 @@ function handleLocalMediaStreamError(error) {
     console.log(error);
 }
 
-const ice = {"iceServers":
-            {"username":"IFMhuvUE7o6_RRpPFYGNpN9TjuItCnrizHdsMmIFf44UBbHJv6Jm8FUqBf9YQL4tAAAAAF55rTRuZ2hpYW52OTU=",
-            "urls":["stun:ss-turn2.xirsys.com",
-                    "turn:ss-turn2.xirsys.com:80?transport=udp",
-                    "turn:ss-turn2.xirsys.com:3478?transport=udp",
-                    "turn:ss-turn2.xirsys.com:80?transport=tcp",
-                    "turn:ss-turn2.xirsys.com:3478?transport=tcp",
-                    "turns:ss-turn2.xirsys.com:443?transport=tcp",
-                    "turns:ss-turn2.xirsys.com:5349?transport=tcp"],
-            "credential":"733db798-6d9b-11ea-a8c2-322c48b34491"}
-            };
+const ice = {
+    iceServers: [{
+        urls: [ "stun:ss-turn2.xirsys.com" ]
+     }, {
+        username: "62FEyM1TqTnr7vcYk3lj49LT2PRb92stiHPHJlec1P8891mdD02nFfu_eNdBOlI6AAAAAF55syxuZ2hpYW52OTU=",
+        credential: "01a6b5f4-6d9f-11ea-8e0d-322c48b34491",
+        urls: [
+            "turn:ss-turn2.xirsys.com:80?transport=udp",
+            "turn:ss-turn2.xirsys.com:3478?transport=udp",
+            "turn:ss-turn2.xirsys.com:80?transport=tcp",
+            "turn:ss-turn2.xirsys.com:3478?transport=tcp",
+            "turns:ss-turn2.xirsys.com:443?transport=tcp",
+            "turns:ss-turn2.xirsys.com:5349?transport=tcp"
+        ]
+     }]
+};
 
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
@@ -99,7 +104,7 @@ function initialize() {
         debug: 3,
         config: ice.iceServers,
     });
-    
+
     peer.on('open', function (id) {
         if (peer.id === null) {
             console.log('Received null id from peer open');
