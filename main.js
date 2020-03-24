@@ -77,6 +77,18 @@ function handleLocalMediaStreamError(error) {
     console.log(error);
 }
 
+const ice = {"iceServers":
+            {"username":"IFMhuvUE7o6_RRpPFYGNpN9TjuItCnrizHdsMmIFf44UBbHJv6Jm8FUqBf9YQL4tAAAAAF55rTRuZ2hpYW52OTU=",
+            "urls":["stun:ss-turn2.xirsys.com",
+                    "turn:ss-turn2.xirsys.com:80?transport=udp",
+                    "turn:ss-turn2.xirsys.com:3478?transport=udp",
+                    "turn:ss-turn2.xirsys.com:80?transport=tcp",
+                    "turn:ss-turn2.xirsys.com:3478?transport=tcp",
+                    "turns:ss-turn2.xirsys.com:443?transport=tcp",
+                    "turns:ss-turn2.xirsys.com:5349?transport=tcp"],
+            "credential":"733db798-6d9b-11ea-a8c2-322c48b34491"}
+            };
+
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
     peer = new Peer(null, {
@@ -85,16 +97,9 @@ function initialize() {
         port: 443,
         secure: true,
         debug: 3,
-        config: { 'iceServers': [
-            {"urls": "stun:stun.l.google.com:19302"},
-		    {"urls": "stun:stun1.l.google.com:19302"},
-		    {"urls": "stun:stun2.l.google.com:19302"},
-		    {"urls": "stun:stun3.l.google.com:19302"},
-		    {"urls": "stun:stun4.l.google.com:19302"}
-        ]
-    }
+        config: ice.iceServers,
     });
-
+    
     peer.on('open', function (id) {
         if (peer.id === null) {
             console.log('Received null id from peer open');
