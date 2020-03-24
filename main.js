@@ -80,6 +80,10 @@ function handleLocalMediaStreamError(error) {
 function initialize() {
     // Create own peer object with connection to shared PeerJS server
     peer = new Peer(null, {
+        key: 'peerjs',
+        host: 'nghianvpeerjs.herokuapp.com',
+        port: 443,
+        secure: true,
         debug: 3,
         config: { 'iceServers': [
             {"urls": "stun:stun.l.google.com:19302"},
