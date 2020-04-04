@@ -83,12 +83,7 @@ const ice = {
             username:"3d9D_U7h6kugmb77KftMuM9gaLldh3CoEwMFsDvism_OFPwtixqQihXudP_GsQQyAAAAAF6Ig_1uZ2hpYW52OTU=",
             urls:[
                "stun:ss-turn2.xirsys.com",
-               "turn:ss-turn2.xirsys.com:80?transport=udp",
                "turn:ss-turn2.xirsys.com:3478?transport=udp",
-               "turn:ss-turn2.xirsys.com:80?transport=tcp",
-               "turn:ss-turn2.xirsys.com:3478?transport=tcp",
-               "turns:ss-turn2.xirsys.com:443?transport=tcp",
-               "turns:ss-turn2.xirsys.com:5349?transport=tcp"
             ],
             credential:"b3c7762e-7673-11ea-8f7e-12fa47b8f761"
          }
