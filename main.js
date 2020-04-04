@@ -78,20 +78,21 @@ function handleLocalMediaStreamError(error) {
 }
 
 const ice = {
-    iceServers: [{
-        urls: [ "stun:ss-turn2.xirsys.com" ]
-     }, {
-        username: "62FEyM1TqTnr7vcYk3lj49LT2PRb92stiHPHJlec1P8891mdD02nFfu_eNdBOlI6AAAAAF55syxuZ2hpYW52OTU=",
-        credential: "01a6b5f4-6d9f-11ea-8e0d-322c48b34491",
-        urls: [
-            "turn:ss-turn2.xirsys.com:80?transport=udp",
-            "turn:ss-turn2.xirsys.com:3478?transport=udp",
-            "turn:ss-turn2.xirsys.com:80?transport=tcp",
-            "turn:ss-turn2.xirsys.com:3478?transport=tcp",
-            "turns:ss-turn2.xirsys.com:443?transport=tcp",
-            "turns:ss-turn2.xirsys.com:5349?transport=tcp"
-        ]
-     }]
+    iceServers: [
+        {
+            username:"3d9D_U7h6kugmb77KftMuM9gaLldh3CoEwMFsDvism_OFPwtixqQihXudP_GsQQyAAAAAF6Ig_1uZ2hpYW52OTU=",
+            urls:[
+               "stun:ss-turn2.xirsys.com",
+               "turn:ss-turn2.xirsys.com:80?transport=udp",
+               "turn:ss-turn2.xirsys.com:3478?transport=udp",
+               "turn:ss-turn2.xirsys.com:80?transport=tcp",
+               "turn:ss-turn2.xirsys.com:3478?transport=tcp",
+               "turns:ss-turn2.xirsys.com:443?transport=tcp",
+               "turns:ss-turn2.xirsys.com:5349?transport=tcp"
+            ],
+            credential:"b3c7762e-7673-11ea-8f7e-12fa47b8f761"
+         }
+    ]
 };
 
 function initialize() {
